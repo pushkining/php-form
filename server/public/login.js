@@ -12,8 +12,8 @@ var formManager = {
     phone: document.querySelector('#userphone'),
     phoneError: document.querySelector('#userphone + .auth__error'),
 
-    password: document.querySelector('#usepassword'),
-    passwordError: document.querySelector('#userpassword + .auth__error'),
+    password: document.querySelector('#usepass'),
+    passwordError: document.querySelector('#userpass + .auth__error'),
 
     subscribe: document.querySelector('#usersubscribe'),
 
@@ -42,7 +42,7 @@ formManager.valid = function () {
         this.phoneError.classList.add('auth__error_show');
         isNotError = false;
     }
-    if (!(/^(\+380|380|08|0)[0-9]{9,}$/.test(this.password.value))) {
+    if (!(/^[а-яa-z0-9\-_\.]{2,25}$/i.test(this.password.value))) {
         this.passwordError.classList.remove('auth__error_hide');
         this.passwordError.classList.add('auth__error_show');
         isNotError = false;
@@ -53,15 +53,16 @@ formManager.valid = function () {
 //var val = valid();
 
 formManager.send = function() {
-    console.log(this)
+    //console.log(this)
 
     if (this.valid() === false ) return null; 
 
     var data = {
         name:this.name.value,
         email:this.email.value,
+        phone:this.phone.value,
         password:this.password.value,
-        subscribe:this.subscribe.value,
+        subscribe:this.subscribe.value.checked,
     }
     console.log('Helloooooooo!!!');
     fetch('/login',{
@@ -75,7 +76,7 @@ formManager.setClearHandler = function  () {
     elements.forEach(function(element){
         
         element.onclick = function (){
-            console.log(this.nextElementSibling);
+            //console.log(this.nextElementSibling);
             this.nextElementSibling.classList.remove('auth__error_show');
             this.nextElementSibling.classList.add('auth__error_hide');
 

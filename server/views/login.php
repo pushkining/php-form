@@ -22,7 +22,7 @@
                 
                 <div class="auth__row">
                     <label for="userpass">User pass</label>
-                    <input class="auth__text" type="password" id="userpassword" >  
+                    <input class="auth__text" type="password" id="userpass" >  
                     <i class="auth__error auth__error_hide">Must contain (a-z,0-9 length > 7 chars)</i>
     
                 </div>              
