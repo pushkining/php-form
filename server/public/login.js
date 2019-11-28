@@ -12,7 +12,7 @@ var formManager = {
     phone: document.querySelector('#userphone'),
     phoneError: document.querySelector('#userphone + .auth__error'),
 
-    password: document.querySelector('#usepass'),
+    password: document.querySelector('#userpass'),
     passwordError: document.querySelector('#userpass + .auth__error'),
 
     subscribe: document.querySelector('#usersubscribe'),
@@ -48,9 +48,8 @@ formManager.valid = function () {
         isNotError = false;
     }
     return isNotError;
-};
+}
 
-//var val = valid();
 
 formManager.send = function() {
     //console.log(this)

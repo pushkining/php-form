@@ -2,7 +2,7 @@
 
 $route = $_SERVER['REQUEST_URI'];
 $method = $_SERVER['REQUEST_METHOD'];
-// var_dump($method);
+var_dump($method);
 
 if($method === 'GET'){
 include './views/header.php';
