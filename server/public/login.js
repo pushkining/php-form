@@ -48,8 +48,9 @@ formManager.valid = function () {
         isNotError = false;
     }
     return isNotError;
-}
+};
 
+//var val = valid();
 
 formManager.send = function() {
     //console.log(this)
