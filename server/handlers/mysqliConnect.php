@@ -2,6 +2,9 @@
 
 $link = mysqli_connect("127.0.0.1", "root", "root", "website");
 
+$link = mysqli_connect("127.0.0.1", "root", "12345678", "web_site");
+
+
 if (!$link) {
 //    echo "Ошибка: Невозможно установить соединение с MySQL." . PHP_EOL;
 //    echo "Код ошибки errno: " . mysqli_connect_errno() . PHP_EOL;
@@ -13,9 +16,8 @@ if (!$link) {
 //echo "Соединение с MySQL установлено!" . PHP_EOL;
 //echo "Информация о сервере: " . mysqli_get_host_info($link) . PHP_EOL;
 
-$users = $link->query('SELECT * from users where id_user=3');
+//$users = $link->query('SELECT * from users where id_user=3');
 
 var_dump($users);
 
 mysqli_close($link);
-?>
