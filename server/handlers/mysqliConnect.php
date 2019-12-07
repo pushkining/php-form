@@ -1,23 +1,48 @@
-<?php
+ <?php
 
-$link = mysqli_connect("127.0.0.1", "root", "root", "website");
+function getUsers() {
+   
 
-$link = mysqli_connect("127.0.0.1", "root", "12345678", "web_site");
+$DB = mysqli_connect("127.0.0.1", "root", "root", "website");
 
-
-if (!$link) {
-//    echo "Ошибка: Невозможно установить соединение с MySQL." . PHP_EOL;
-//    echo "Код ошибки errno: " . mysqli_connect_errno() . PHP_EOL;
-//    echo "Текст ошибки error: " . mysqli_connect_error() . PHP_EOL;
-//    exit;
+if (!$DB) {
     die("Ошибка: Невозможно установить соединение");
 }
 
-//echo "Соединение с MySQL установлено!" . PHP_EOL;
-//echo "Информация о сервере: " . mysqli_get_host_info($link) . PHP_EOL;
+$dataUsers = $DB->query('SELECT * from users');
 
-//$users = $link->query('SELECT * from users where id_user=3');
-
+$users = $dataUsers->fetch_all(MYSQLI_ASSOC);
 var_dump($users);
 
-mysqli_close($link);
+mysqli_close($DB);
+//return $users;
+}
+
+function addUser($data) {
+    $DB = mysqli_connect("127.0.0.1", "root", "root", "website");
+      
+    if (!$DB) {
+        die("Ошибка: Невозможно установить соединение");
+    }
+
+    $sql = "INSERT into users (user_name,user_email,`user_password`,user_phone,age)";
+    $sql .= "VALUES('{$data['user_name']}', '{$data['user_email']}', '{$data['user_password']}','{$data['user_phone']}','{$data['age']}');";    
+    $resultQuery = $DB->query($sql);
+    
+    //$users = $resultQuery->fetch_all(MYSQLI_ASSOC);
+    var_dump($resultQuery);
+
+    mysqli_close($DB);
+    return $resultQuery;
+    }
+
+$user = [
+    "user_name" => "vana",
+    "user_email" => "vana@gnauk.com",
+    "user_phone" => 380391234564,
+    "user_password" => 4567,
+    "age" => 14,
+
+];
+
+    addUser($user);
