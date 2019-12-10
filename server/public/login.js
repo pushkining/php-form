@@ -17,7 +17,7 @@ var formManager = {
 
     subscribe: document.querySelector('#usersubscribe'),
 
-    sendBtn: document.querySelector('#sendbtn'),
+    sendBtn: document.querySelector('#sendbtn')
      
 };
 
@@ -62,13 +62,19 @@ formManager.send = function() {
         email:this.email.value,
         phone:this.phone.value,
         password:this.password.value,
-        subscribe:this.subscribe.value.checked,
+        subscribe:this.subscribe.value.checked
     }
     console.log('Helloooooooo!!!');
-    fetch('/login',{
+    fetch('/registration',{
        method:'POST',
        body: JSON.stringify(data)
-    });
+    }).then(function(response){
+        return response.json();
+    }).then(function(data) {
+        console.log(data);
+        alert(data.message)
+    }
+  )
 }
 
 formManager.setClearHandler = function  () {

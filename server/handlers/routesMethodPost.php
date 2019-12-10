@@ -7,15 +7,24 @@ if($method === 'POST') {
     valid($request);
   
     $isValid = valid($request);
-    var_dump($isValid);
     
     if ($isValid) {
-    $response = [
+    $responseSuccess = [
         'result' => true,
         'message' => 'registration successful, go to login',
     ];
+    $responseFail = [
+        'result' => false,
+        'message' => 'email or phone already exists',
+    ];
+    
     $request['age'] = 18;
-    addUser($request);
+    $isSave = addUser($request);
+    if ($isSave) {
+        echo json_decode($responseSuccess);
+    } else {
+        echo json_decode($responseFail);
+    }
 
     echo json_encode($response);
  } else {

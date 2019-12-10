@@ -2,38 +2,22 @@
         <form class="auth" action="">
             <fieldset>
                 <legend>Авторизация</legend>
-                <div class="auth__row">
-                    <label for="username">User name</label>
-                    <input value="vasa" class="auth__text" type="text" id="username">
-                    <i class="auth__error auth__error_hide">Do not contain (_,{},0-9 length > 5 chars)</i>
-                </div>
-                
-                <div class="auth__row">
-                    <label for="useremail">User email</label>
-                    <input value="vasa@mylo.ur" class="auth__text" type="text" id="useremail">
-                    <i class="auth__error auth__error_hide">Not valid email(example@mail.com)</i>                    
-                </div> 
+
 
                 <div class="auth__row">
-                    <label for="userphone">User phone</label>
-                    <input value="0964861243" class="auth__text" type="text" id="userphone">
-                    <i class="auth__error auth__error_hide">Not valid phone(+380667775544)</i>                    
+                    <label for="useremail">User email</label>
+                    <input name="email" value="vasa@mylo.ur" class="auth__text" type="text" id="useremail">                    
                 </div> 
+
                 
                 <div class="auth__row">
-                    <label for="userpass">User pass</label>
-                    <input class="auth__text" type="password" id="userpass" >  
-                    <i class="auth__error auth__error_hide">Must contain (a-z,0-9 length > 7 chars)</i>
-    
+                    <label for="userpass">User password</label>
+                    <input name="password" class="auth__text" type="password" id="userpass" >     
                 </div>              
-                <label class="auth__check">
-                        Subscribe
-                        <input type="checkbox" id="usersubscribe">
-                </label>
+
                 
                     <div class="auth__row">
-                        <button type="button" class="auth__btn" id="sendbtn">Login</button>
+                        <button type="submit" class="auth__btn" id="sendbtn">Login</button>
                     </div>
             </fieldset>
         </form>
-        <script defer src="public/login.js"></script>
