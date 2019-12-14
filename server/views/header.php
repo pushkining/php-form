@@ -19,5 +19,8 @@
             <li><a class="header__link" href="/contacts">Contacts</a></li>
         </ul>
     </nav>
+    <p>
+        <?= $routes_str ?>
+    </p>
     </header>
     <main class="page">

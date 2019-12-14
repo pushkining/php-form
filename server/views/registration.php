@@ -4,19 +4,19 @@
                 <legend>Авторизация</legend>
                 <div class="auth__row">
                     <label for="username">User name</label>
-                    <input value="vasa" class="auth__text" type="text" id="username">
+                    <input class="auth__text" type="text" id="username">
                     <i class="auth__error auth__error_hide">Do not contain (_,{},0-9 length > 5 chars)</i>
                 </div>
                 
                 <div class="auth__row">
                     <label for="useremail">User email</label>
-                    <input value="vasa@mylo.ur" class="auth__text" type="text" id="useremail">
+                    <input class="auth__text" type="text" id="useremail">
                     <i class="auth__error auth__error_hide">Not valid email(example@mail.com)</i>                    
                 </div> 
 
                 <div class="auth__row">
                     <label for="userphone">User phone</label>
-                    <input value="0964861243" class="auth__text" type="text" id="userphone">
+                    <input value="380964861243" class="auth__text" type="text" id="userphone">
                     <i class="auth__error auth__error_hide">Not valid phone(+380667775544)</i>                    
                 </div> 
                 

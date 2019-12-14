@@ -1,6 +1,6 @@
 <?php
 
-function getUsers() {
+function getUser($email) {
     $DB = mysqli_connect("127.0.0.1", "root", "root", "website");
 
 
@@ -9,16 +9,16 @@ function getUsers() {
     }
 
 
-    $dataUsers = $DB->query('SELECT id, username, email, phone from users');
+    $dataUser = $DB->query("SELECT id, username, email, phone from users where email='{$email}'");
 
 
-    $users = $dataUsers->fetch_all(MYSQLI_ASSOC);
+    $user = $dataUser->fetch(MYSQLI_ASSOC);
 
     // var_dump($users);
 
     mysqli_close($DB);
     
-    return $users;
+    return $user;
 }
 
 function addUser($data) {
